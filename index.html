@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href='style.css'>
+    <title>Designed Menu</title>
+</head>
+<body>
+    <div class = 'container'>
+
+        <div class = 'selector'>
+            <div class = 'selectField'>
+                <p class = 'selectText'>Select Social Media</p>
+                <img src='arrow.png' class= 'arrowIcon'>
+            </div>
+
+            <ul class = 'hide'> 
+                <li>
+                    <img src="facebook.png">
+                    <p>Facebook</p>
+                </li>
+                <li>
+                    <img src="youtube.png">
+                    <p>YouTube</p>
+                </li>
+                <li>
+                    <img src="instagram.png">
+                    <p>Instagram</p>
+                </li>
+                <li>
+                    <img src="twitter.png">
+                    <p>Twitter</p>
+                </li>
+                <li>
+                    <img src="pinterest.png">
+                    <p>Pinterest</p>
+                </li>
+                <li>
+                    <img src="whatsapp.png">
+                    <p>Whatsapp</p>
+                </li>
+            </ul>
+        </div>       
+    </div>
+
+    <script>
+        const selectField = document.querySelector('.selectField');
+        const selectText = document.querySelector('.selectText');
+        const options = document.querySelectorAll('li');
+
+        selectField.addEventListener('click', () => {
+            document.querySelector('ul').classList.toggle('hide');
+            document.querySelector('.arrowIcon').classList.toggle('rotate');
+        });
+
+        for (let option of options) {
+            option.addEventListener('click', () => {
+                selectText.textContent = option.innerText;
+                document.querySelector('ul').classList.toggle('hide');
+                document.querySelector('.arrowIcon').classList.toggle('rotate');
+            });
+        };
+
+    </script>
+    
+</body>
+</html>
